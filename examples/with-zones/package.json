@@ -2,19 +2,18 @@
   "name": "with-zones",
   "version": "1.0.0",
   "scripts": {
-    "home": "next home -p 4000",
-    "home-build": "next build home",
-    "home-start": "next start home -p 4000",
-    "blog": "next blog -p 5000",
-    "blog-build": "next build blog",
-    "blog-start": "next start blog -p 5000",
-    "proxy": "micro-proxy -r rules-dev.json"
+    "blog": "next ./packages/blog -p 5000",
+    "blog-build": "next build ./packages/blog",
+    "blog-start": "next start ./packages/blog -p 5000",
+    "home": "next ./packages/home -p 4000",
+    "home-build": "next build ./packages/home",
+    "home-start": "next start ./packages/home -p 4000",
+    "proxy": "micro-proxy -r rules-dev.json",
   },
   "dependencies": {
-    "micro-proxy": "^1.0.0",
-    "next": "5.0.0-universal-alpha.15",
-    "react": "16.2.0",
-    "react-dom": "16.2.0"
+    "micro-proxy": "^1.0.0"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "private": true,
+  "workspaces": ["packages/*"]
 }
