@@ -9,8 +9,10 @@
     "home-build": "next build ./packages/home",
     "home-start": "next start ./packages/home -p 4000",
     "proxy": "micro-proxy -r rules-dev.json",
+    "dev": "concurrently 'yarn blog' 'yarn home' 'yarn proxy'"
   },
   "dependencies": {
+    "concurrently": "3.5.1",
     "micro-proxy": "^1.0.0"
   },
   "license": "ISC",
